@@ -1,3 +1,4 @@
+import math
 from typing import List
 
 def zcount(list: List[float]) -> float:
@@ -22,4 +23,7 @@ def zvariance(list: List[float]) -> float:
     for x in list:
         deviations = [(x - zmean(list)) ** 2]
         variance = sum(deviations) / zcount(list)
+
+def zstddev(list: List[float]) -> float:
+    return math.sqrt(zvariance(list))
 
