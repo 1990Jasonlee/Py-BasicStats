@@ -18,3 +18,8 @@ def zmedian(list: List[float]) -> float:
     index = list_length / 2
     return sorted_number[index]
 
+def zvariance(list: List[float]) -> float:
+    for x in list:
+        deviations = [(x - zmean(list)) ** 2]
+        variance = sum(deviations) / zcount(list)
+
