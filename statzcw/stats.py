@@ -13,3 +13,8 @@ def zmode(list: List[float]) -> float:
 
 
 def zmedian(list: List[float]) -> float:
+    sorted_number = sorted(list)
+    list_length = len(list)
+    index = list_length / 2
+    return sorted_number[index]
+
