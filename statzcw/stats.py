@@ -27,3 +27,6 @@ def zvariance(list: List[float]) -> float:
 def zstddev(list: List[float]) -> float:
     return math.sqrt(zvariance(list))
 
+def zstderr(list: List[float]) -> float:
+    return zstddev(list) / math.sqrt(zcount(list))
+
