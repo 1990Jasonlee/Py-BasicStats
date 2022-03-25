@@ -30,3 +30,12 @@ def zstddev(list: List[float]) -> float:
 def zstderr(list: List[float]) -> float:
     return zstddev(list) / math.sqrt(zcount(list))
 
+def zcorr(listx: List[float], listy: List[float]) -> float:
+    return cov(listx, listy) / zstddev(listx) * zstddev(listy)
+
+def cov(listx: List[float], listy: List[float]) -> float:
+    sum = 0
+    if zcount(listx) == zcount(listy):
+        for i in range(0, zcount(listx)):
+            sum += ((listx[i] - zmean(listx)) * (listy[i] - zmean(listy)))
+        return sum / (zcount(listx)-1)
