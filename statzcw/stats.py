@@ -46,11 +46,11 @@ def cov(listx: List[float], listy: List[float]) -> float:
 def readDataSets(files):
     data = {}
     for file in files:
-        data[file] = readDataSets(files)
+        data[file] = readDataFile(files)
         return data
 
-def read_data_file(files):
-    x , y = [], []
+def readDataFile(files):
+    x, y = [], []
     with open(files) as file:
         newline = file.line()
         for line in file:
