@@ -26,7 +26,7 @@ def zvariance(list: List[float]) -> float:
     for x in list:
         deviations = [abs(zmean(list) - x) ** 2]
         variance = sum(deviations) / (zcount(list)-1)
-        return variance
+    return variance
 
 
 def zstddev(list: List[float]) -> float:
@@ -41,7 +41,7 @@ def zcorr(listx: List[float], listy: List[float]) -> float:
 def cov(listx: List[float], listy: List[float]) -> float:
     sum = 0
     if zcount(listx) == zcount(listy):
-        for i in range(0, zcount(listx)):
+        for i in range(len(listx)):
             sum += ((listx[i] - zmean(listx)) * (listy[i] - zmean(listy)))
         return sum / (zcount(listx)-1)
 
