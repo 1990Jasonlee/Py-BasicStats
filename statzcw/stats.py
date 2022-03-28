@@ -55,7 +55,7 @@ def readDataFile(files):
     x, y = [], []
     with open(files) as file:
         new_line = file.readline()
-        for line in file:
+        for line in new_line:
             row = line.split(',')
             x.append(float(row[0]))
             y.append(float(row[1]))
